@@ -4,22 +4,22 @@ This repository contains the solution for the prerequisite assignment, which imp
 
 ## Files and Directories
 
-- `prereq.cc`  
+- `prereq.cc`
   Contains the implementation of the `calculate` function.
 
-- `tests/`  
+- `tests/`
   Test cases used by the grader.
 
-- `benchmarks/`  
+- `benchmarks/`
   Benchmark-related files provided with the assignment.
 
-- `grading/`  
+- `grading/`
   Grading scripts and tools.
 
-- `prereq`  
+- `prereq`
   Compiled executable generated during grading.
 
-- `prereq.dSYM`  
+- `prereq.dSYM`
   Debug symbols generated on macOS.
 
 ## Description
@@ -35,7 +35,7 @@ To run the grader:
 ```
 ## On slower systems (e.g. macOS), you may need:
 
-````bash 
+```bash
 ./grading test --no-timeout
 ```
 ## Notes
