@@ -16,7 +16,7 @@ build/
 cmake-build-*/
 
 # Grader / compiled binaries
-prereq
+# prereq
 grading/**/prereq
 grading/**/prereq.dSYM
 
@@ -33,3 +33,12 @@ venv/
 
 # Course-specific generated files
 benchmarks/
+# Course framework / grader files
+cp1/prereq/.ppc/
+cp1/prereq/tests/
+cp1/prereq/benchmarks/
+cp1/prereq/grading
+
+# Build artifacts
+cp1/prereq/prereq
+*.dSYMS

@@ -1,46 +1,28 @@
-# Prerequisite Assignment – Average Color Calculation
+# Pearson Correlation Calculator
 
-This repository contains the solution for the prerequisite assignment, which implements a function to compute the average RGB color of a rectangular region in a bitmap image.
+## Overview
+This C++ code computes the Pearson correlation coefficients between rows of a data matrix using double-precision arithmetic for improved numerical stability.
 
-## Files and Directories
+## Features
+- **Row-wise normalization**: Centers each row to zero mean and scales to unit Euclidean length
+- **Double precision**: Uses `double` internally to reduce floating-point errors
+- **Efficient computation**: Computes only the upper triangular part of the symmetric correlation matrix
 
-- `prereq.cc`
-  Contains the implementation of the `calculate` function.
+## Algorithm
+1. **Normalization**: For each row:
+   - Subtract the mean
+   - Divide by the row's Euclidean norm
+2. **Correlation**: Compute dot products between normalized rows:
+   `corr(i,j) = dot(norm_row_i, norm_row_j)`
 
-- `tests/`
-  Test cases used by the grader.
+## Usage
+Call `correlate(ny, nx, data, result)` where:
+- `ny`: number of rows
+- `nx`: number of columns
+- `data`: input matrix (row-major, size `ny*nx`)
+- `result`: output matrix (size `ny*ny`, upper triangle stored in row-major order)
 
-- `benchmarks/`
-  Benchmark-related files provided with the assignment.
-
-- `grading/`
-  Grading scripts and tools.
-
-- `prereq`
-  Compiled executable generated during grading.
-
-- `prereq.dSYM`
-  Debug symbols generated on macOS.
-
-## Description
-
-The function iterates over the pixels inside a given rectangle and computes the arithmetic mean of the red, green, and blue color components. All calculations are performed using double precision, and the final result is returned as single-precision floating-point values, as required.
-
-## Build and Test
-
-To run the grader:
-
-```bash
-./grading test
-```
-## On slower systems (e.g. macOS), you may need:
-
-```bash
-./grading test --no-timeout
-```
-## Notes
-
-- The implementation prioritizes correctness and clarity over performance.
-- No parallelism or advanced optimization techniques are used.
+## Output Format
+The symmetric correlation matrix is stored in `result` with elements `result[i + j*ny]` for `j <= i`.
 
 # End
