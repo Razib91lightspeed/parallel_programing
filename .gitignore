@@ -1,0 +1,35 @@
+# macOS junk
+.DS_Store
+
+# Editor / IDE
+.vscode/
+
+# Build artifacts
+*.o
+*.out
+*.exe
+*.dSYM
+*.log
+
+# CMake / build directories (just in case)
+build/
+cmake-build-*/
+
+# Grader / compiled binaries
+prereq
+grading/**/prereq
+grading/**/prereq.dSYM
+
+# Python / misc (harmless to ignore)
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Temporary files
+*.tmp
+*.swp
+
+# Course-specific generated files
+benchmarks/
